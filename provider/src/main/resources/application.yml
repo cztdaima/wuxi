@@ -1,0 +1,22 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: provider
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:test;MODE=MYSQL
+    username: root
+    password: test.
+
+#eureka客户端连接配置
+eureka:
+  client:
+    service-url:
+      #注册中心地址
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    #将ip注册到eureka上
+    prefer-ip-address: true
